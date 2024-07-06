@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="box">
+        <h2 class="text">Scroll to See Magic...</h2>
+    </div>
+    <script>
+        let textElement = document.querySelector('.text');
+        let textContent = textElement.textContent;
+        textElement.innerHTML = '';
+
+        let spans =[];
+        for(let char of textContent)
+    {
+        let span = document.createElement('span');
+        span.textContent =char;
+        textElement.appendChild(span);
+        spans.push(span);
+    }
+    </script>
+</body>
+</html>
