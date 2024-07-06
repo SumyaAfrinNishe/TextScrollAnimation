@@ -23,6 +23,22 @@
         textElement.appendChild(span);
         spans.push(span);
     }
+
+    // add scroll event listener
+    window.addEventListener('scroll' , () => {
+        let scrollDistance = window.scrollY;
+        spans.forEach((span, index) => {
+            if(scrollDistance >= (index + 1) * 50)
+        {
+            span.style.transform = `translate(${index * 20}px,0)`;
+            span.classList.add('active');
+        }
+        else{
+           span.style.transform = `translate(${Math.random() * 100 - 50}vw, ${Math.random() * 100 - 50}vh)`;
+           span.classList.remove('active');
+        }
+        })
+    })
     </script>
 </body>
 </html>
